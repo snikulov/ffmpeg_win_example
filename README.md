@@ -19,7 +19,7 @@ Usage
 ======
  
  - set INCLUDE=%INCLUDE%;< path to ffmpeg include folder >
- - set INCLUDE=%LIB%;< path to ffmpeg lib folder >
+ - set LIB=%LIB%;< path to ffmpeg lib folder >
  - cmake < path to this project clone > -G[Ninja | any other generator your want]
  - ninja
 
