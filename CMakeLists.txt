@@ -9,7 +9,7 @@
 #      test/
 #
 #--------------------------------------------
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
 # use standard file endings - rename to cxx if needed
 set(SRC_EXT_PATTERN ".cpp")
@@ -28,19 +28,14 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
 option(USE_CXX11_STD "Product should be build with C++11 compiler option enabled" ON)
 
 if(USE_CXX11_STD)
-	if(CMAKE_COMPILER_IS_GNUCXX)
-		set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11")
-	else()
-		# don't know so far how to enable it for clang/icc/msvc
-#		message(FATAL_ERROR "USE_CXX11_STD: only GCC is supported")
-	endif()
+    set(CMAKE_CXX_STANDARD 11)
 endif()
 
 # add include path for project
 # add additional path if required
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-find_package(FFMPEG)
+find_package(FFmpeg COMPONENTS AVCODEC AVFORMAT AVUTIL AVDEVICE REQUIRED)
 
 if(FFMPEG_FOUND)
 #  FFMPEG_INCLUDE_DIRS  - Include directory necessary for using the required components headers.
