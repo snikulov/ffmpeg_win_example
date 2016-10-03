@@ -18,9 +18,4 @@ Used 3rd parties tools/libs
 Usage
 ======
 
- - set INCLUDE=%INCLUDE%;< path to ffmpeg include folder >
- - set LIB=%LIB%;< path to ffmpeg lib folder >
- - cmake < path to this project clone with submodules > -G[Ninja | any other generator your want]
- - ninja
-
-Done!
+Refer wiki page for usage https://github.com/snikulov/ffmpeg_win_example/wiki/Full-build-procedure
