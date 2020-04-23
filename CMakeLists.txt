@@ -57,5 +57,7 @@ source_group("Source Files" FILES ${SRC_FILES})
 
 # build target
 add_executable(${PROJECT_NAME} ${SRC_FILES})
+if(MSVC)
+  target_include_directories(${PROJECT_NAME} PRIVATE include/msvc)
+endif()
 target_link_libraries(${PROJECT_NAME} ${FFMPEG_LIBRARIES})
-
